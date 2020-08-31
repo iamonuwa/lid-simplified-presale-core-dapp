@@ -23,7 +23,7 @@ export default function Header({ address, onConnect }) {
           ml="-3px">
           <Image
             src="/logo.png"
-            alt="Swapfolio Logo"
+            alt={`${META.TOKEN_NAME} Logo`}
             w="auto"
             h="60px"
             display="inline-block"
