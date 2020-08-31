@@ -11,13 +11,13 @@ export const providerOptions = {
   walletconnect: {
     package: WalletConnectProvider, // required
     options: {
-      infuraId: '29a7f0c37b214a90934bec1b032d5c8f' // required
+      infuraId: process.env.REACT_APP_WALLET_CONNECT_INFURA // required
     }
   },
   fortmatic: {
     package: Fortmatic, // required
     options: {
-      key: 'pk_live_B853BB3433E80B5B' // required
+      key: process.env.REACT_APP_FORTMATIC_KEY // required
     }
   },
   torus: {
@@ -32,24 +32,24 @@ export const providerOptions = {
   portis: {
     package: Portis, // required
     options: {
-      id: '9b1635c2-43f4-4cbe-b8b6-73bf219d6a77' // required
+      id: process.env.REACT_APP_PORTIS_KEY // required
     }
   },
   squarelink: {
     package: Squarelink, // required
     options: {
-      id: '48ff2cdfaf26656bbd86' // required
+      id: process.env.REACT_APP_SQUARELINK_KEY // required
     }
   },
   mewconnect: {
     package: MewConnect, // required
     options: {
-      infuraId: '53a6aee5a5c74599b815999befb91ecc' // required
+      infuraId: process.env.REACT_APP_MEWCONNECT // required
     }
   }
 };
 
-export const totalPresale = '11400000';
+export const totalPresale = process.env.REACT_APP_TOTAL_PRESALE || '11400000';
 
 export const infura_ids = [
   '0764bdc3bf3f4eb7b38dc5b45d652bc9',
@@ -60,5 +60,14 @@ export const infura_ids = [
   '301ca1cb214744b69c68548011cf9e1d'
 ];
 
-export const referralBP = '250';
-export const basisPoint = '10000';
+export const referralBP = process.env.REACT_APP_REFERRAL_BP || '250';
+export const basisPoint = process.env.REACT_APP_BASISPOINT || '10000';
+
+export const META = {
+  TOKEN_NAME: process.env.REACT_APP_TOKEN_NAME || 'LID',
+  TOKEN_SYMBOL: process.env.REACT_APP_TOKEN_SYMBOL || 'LID',
+  TOKEN_OWNER_WEBSITE:
+    process.env.REACT_APP_TOKEN_OWNER_WEBSITE || 'https://lid.sh',
+  REFERRAL_LINK: process.env.REACT_APP_SITE || 'https://lid.sh/#/'
+};
+

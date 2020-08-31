@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, Box, Button } from '@chakra-ui/core';
+import { META } from '../config';
 
 export default function PresaleCompletion({
   isEnded,
@@ -17,7 +18,7 @@ export default function PresaleCompletion({
       mb="40px"
       textAlign="center">
       <Text fontSize="18px" m="0" p="0" color="lid.fg">
-        To Complete SWFL Presale:
+        {`To Complete ${META.TOKEN_SYMBOL} Presale:`}
       </Text>
       {!isEnded && (
         <Text fontSize="14px" m="0" p="0" color="lid.fgMed">

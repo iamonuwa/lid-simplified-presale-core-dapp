@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, Box } from '@chakra-ui/core';
 import CountDown from './CountDown';
+import { META } from '../config';
 
 export default function EndTimer({ expiryTimestamp }) {
   return (
@@ -16,7 +17,7 @@ export default function EndTimer({ expiryTimestamp }) {
       mr="auto"
       textAlign="center">
       <Text fontSize={{ base: '28px', sm: '36px' }} fontWeight="bold">
-        SWFL Presale ends in
+        {`${META.TOKEN_SYMBOL} Presale ends in`}
       </Text>
       <CountDown
         expiryTimestamp={expiryTimestamp == null ? new Date() : expiryTimestamp}

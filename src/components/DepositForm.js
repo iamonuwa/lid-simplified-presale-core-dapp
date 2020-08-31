@@ -7,7 +7,7 @@ import {
   NumberInputField
 } from '@chakra-ui/core';
 import { shortenDecimal, toBN, toWei, fromWei } from '../utils.js';
-import { referralBP, basisPoint } from '../config';
+import { referralBP, basisPoint, META } from '../config';
 
 export default function DepositForm({
   rate,
@@ -41,7 +41,7 @@ export default function DepositForm({
             .div(toBN(basisPoint))
         )
     : toBN('1');
-  
+
   const availableMax = availableByAccountDeposit.gte(availableByTotalDeposit)
     ? availableByTotalDeposit
     : availableByAccountDeposit;
@@ -69,7 +69,7 @@ export default function DepositForm({
         border="solid 1px"
         borderColor="lid.stroke">
         <Text fontSize={{ base: '24px', sm: '36px' }} fontWeight="bold">
-          Deposit ETH for SWFL
+          {`Deposit ETH for ${META.TOKEN_SYMBOL}`}
         </Text>
         <Text fontSize="18px" color="blue.500">
           Minimum 0.01 ETH, Maximum 20 ETH
@@ -78,7 +78,7 @@ export default function DepositForm({
           Your Available Max: {shortenDecimal(fromWei(availableMax))} ETH
         </Text>
         <Text fontSize="18px">
-          Estimated SWFL:{' '}
+          {`Estimated ${META.TOKEN_SYMBOL}:`}
           {!val
             ? '0'
             : shortenDecimal(

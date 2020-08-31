@@ -15,7 +15,7 @@ import PresaleCompletion from './components/PresaleCompletion';
 import Claimer from './components/Claimer';
 
 import { toBN, toWei } from './utils.js';
-import { providerOptions, totalPresale, infura_ids } from './config';
+import { providerOptions, totalPresale, infura_ids, META } from './config';
 import addresses from './contracts/addresses';
 import abis from './contracts/abis';
 
@@ -264,7 +264,7 @@ function App() {
 
   const handleLidClaim = async function () {
     if (toBN(accountRedeemable).lt(toBN('1'))) {
-      alert('You must have at least 1 wei of SWFL to claim.');
+      alert(`You must have at least 1 wei of ${META.TOKEN_SYMBOL} to claim.`);
       return;
     }
     await lidPresaleSC.methods.redeem().send({ from: address });
@@ -398,15 +398,13 @@ function App() {
         ml="auto"
         mr="auto"
       />
-      {isActive &&
-        isEnded &&
-        !isPaused && (
-          <PresaleCompletion
-            isEnded={isEnded}
-            handleSendToUniswap={handleSendToUniswap}
-            handleIssueTokens={handleIssueTokens}
-          />
-        )}
+      {isActive && isEnded && !isPaused && (
+        <PresaleCompletion
+          isEnded={isEnded}
+          handleSendToUniswap={handleSendToUniswap}
+          handleIssueTokens={handleIssueTokens}
+        />
+      )}
 
       <Footer />
     </ThemeProvider>

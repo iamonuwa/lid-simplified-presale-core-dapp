@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, Box, Flex, Image, Link, Button } from '@chakra-ui/core';
 import Blockie from './Blockie';
+import { META } from '../config';
 
 export default function Header({ address, onConnect }) {
   return (
@@ -15,7 +16,9 @@ export default function Header({ address, onConnect }) {
         pr={{ base: '20px', lg: '0px' }}>
         <Link
           display="inline-block"
-          href="https://swapfol.io/"
+          target="_blank"
+          rel="noreferrer noopener"
+          href={META.TOKEN_OWNER_WEBSITE}
           m="0px"
           ml="-3px">
           <Image
@@ -34,7 +37,7 @@ export default function Header({ address, onConnect }) {
             display="inline-block"
             ml="20px"
             color="lid.brand">
-            SWFL Presale
+            {`${META.TOKEN_SYMBOL} Presale`}
           </Text>
         </Link>
         {address ? (
@@ -78,7 +81,12 @@ export default function Header({ address, onConnect }) {
         Whitelisted? {isWhitelisted ? "Yes" : "No"}
         </Text>
       */}
-        <Link display="inline-block" href="https://lid.sh" m="0px">
+        <Link
+          display="inline-block"
+          target="_blank"
+          rel="noreferrer noopener"
+          href="https://lid.sh"
+          m="0px">
           <Image
             src="/logo-lid.png"
             alt="Lid Logo"

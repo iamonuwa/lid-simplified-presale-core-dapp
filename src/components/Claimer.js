@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, Box, Button, Grid } from '@chakra-ui/core';
 import CountDownShort from './CountDownShort';
 import { shortEther, toBN, toWei } from '../utils';
-import { totalPresale } from '../config';
+import { totalPresale, META } from '../config';
 
 export default function Claimer({
   finalEndTime,
@@ -33,13 +33,13 @@ export default function Claimer({
         mb="20px"
         p="20px">
         <Text fontSize={{ base: '24px', sm: '36px' }} fontWeight="bold">
-          Claim Your SWFL
+          {`Claim Your ${META.TOKEN_SYMBOL}`}
         </Text>
         <Text fontSize="18px" color="blue.500">
           2% released / hour
         </Text>
         <Text fontSize="18px" color="lid.fg">
-          SWFL to Claim: {shortEther(accountRedeemable)}
+          {`${META.TOKEN_SYMBOL} to Claim: ${shortEther(accountRedeemable)}`}
         </Text>
         <Button
           variantColor="blue"
@@ -74,7 +74,7 @@ export default function Claimer({
           borderColor="lid.stroke"
           bg="lid.bg">
           <Text fontSize="18px" m="0" p="0" color="lid.fgMed">
-            Total SWFL Claimed
+            {`Total ${META.TOKEN_SYMBOL} Claimed`}
           </Text>
           <Text fontSize="38px" w="100%" fontWeight="bold">
             {shortEther(accountClaimedTokens)}
@@ -88,7 +88,7 @@ export default function Claimer({
           borderColor="lid.stroke"
           bg="lid.bg">
           <Text fontSize="18px" m="0" p="0" color="lid.fgMed">
-            SWFL / Hour
+            {`${META.TOKEN_SYMBOL} / Hour`}
           </Text>
           <Text fontSize="38px" w="100%" fontWeight="bold">
             {maxShares !== '0'
@@ -114,7 +114,7 @@ export default function Claimer({
         mb="20px"
         p="20px">
         <Text fontSize="18px" color="lid.fg">
-          More SWFL available to claim in
+          {`More ${META.TOKEN_SYMBOL} available to claim in`}
         </Text>
         <CountDownShort
           expiryTimestamp={

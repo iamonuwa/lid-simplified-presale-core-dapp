@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, Box, Flex, Grid, Image, Link } from '@chakra-ui/core';
 import { shortEther, toBN, toWei } from '../utils';
-import { totalPresale } from '../config';
+import { totalPresale, META } from '../config';
 import addresses from '../contracts/addresses';
 
 export default function Subheading({
@@ -56,21 +56,21 @@ export default function Subheading({
             borderColor="lid.stroke"
             bg="lid.bg">
             <Text fontSize="18px" m="0" p="0" color="lid.fgMed">
-              Verified SWFL Presale Contract
+              {`Verified ${META.TOKEN_SYMBOL} Presale Contract`}
             </Text>
             {addresses.presale ? (
               <Link
                 wordBreak="break-word"
                 color="lid.brand"
+                target="_blank"
+                rel="noreferrer noopener"
                 href={'https://etherscan.io/address/' + addresses.presale}
                 mt="15px"
                 display="block">
                 {addresses.presale}
               </Link>
             ) : (
-              <Text>
-                TBD
-              </Text>
+              <Text>TBD</Text>
             )}
           </Box>
           <Box
@@ -115,7 +115,7 @@ export default function Subheading({
               top="-3px"
             />
             <Text ml="10px" mt="5px" color="lid.bg" display="inline-block">
-              Your SWFL Tokens
+              {`Your ${META.TOKEN_SYMBOL} Tokens`}
             </Text>
             <Text fontSize="38px" w="100%" fontWeight="bold">
               {maxShares !== '0'
@@ -193,7 +193,7 @@ export default function Subheading({
               top="-3px"
             />
             <Text ml="10px" mt="5px" color="lid.fgMed" display="inline-block">
-              Total Presale SWFL
+              {`Total Presale ${META.TOKEN_SYMBOL}`}
             </Text>
             <Text fontSize="38px" w="100%" fontWeight="bold" color="lid.brand">
               {shortEther(toWei(totalPresale))}

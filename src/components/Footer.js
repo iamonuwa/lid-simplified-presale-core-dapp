@@ -20,7 +20,12 @@ export default function Footer() {
         mr="auto"
         borderTop="solid 1px"
         borderColor="lid.ltGray">
-        <Link display="inline-block" href="https://lid.sh" m="0px">
+        <Link
+          display="inline-block"
+          target="_blank"
+          rel="noreferrer noopener"
+          href="https://lid.sh"
+          m="0px">
           <Image
             src="/LID_white_h.png"
             alt="Lid.sh Website"
@@ -32,32 +37,50 @@ export default function Footer() {
         <Text mt="20px" fontSize="14px">
           LID Links
         </Text>
-        <Link display="inline-block" href="https://discord.gg/eyJYrQu" m="20px">
+        <Link
+          display="inline-block"
+          target="_blank"
+          rel="noreferrer noopener"
+          href="https://discord.gg/eyJYrQu"
+          m="20px">
           <Image w="auto" h="25px" src="./icons/discord.png" />
         </Link>
-        <Link display="inline-block" href="https://t.me/LIDProtocol" m="20px">
+        <Link
+          display="inline-block"
+          target="_blank"
+          rel="noreferrer noopener"
+          href="https://t.me/LIDProtocol"
+          m="20px">
           <Image w="auto" h="25px" src="./icons/telegram.png" />
         </Link>
         <Link
           display="inline-block"
+          target="_blank"
+          rel="noreferrer noopener"
           href="https://twitter.com/LIDProtocol"
           m="20px">
           <Image w="auto" h="25px" src="./icons/Twitter.png" />
         </Link>
         <Link
           display="inline-block"
+          target="_blank"
+          rel="noreferrer noopener"
           href="https://www.reddit.com/r/LIDProtocol/"
           m="20px">
           <Image w="auto" h="25px" src="./icons/reddit.png" />
         </Link>
         <Link
           display="inline-block"
+          target="_blank"
+          rel="noreferrer noopener"
           href="https://github.com/carlsbad-sunshine/lid-contracts"
           m="20px">
           <Image w="auto" h="25px" src="./icons/github.png" />
         </Link>
         <Link
           display="inline-block"
+          target="_blank"
+          rel="noreferrer noopener"
           href="https://www.youtube.com/channel/UCM6Q_SMoQAALhhiJW5OZF9w/featured"
           m="20px">
           <Image w="auto" h="25px" src="./icons/Youtube.png" />
